@@ -1,0 +1,29 @@
+{
+  "name": "node-matchengine",
+  "version": "0.0.1",
+  "description": "Node module for using the TinEye MatchEngine API.",
+  "main": "matchengine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeresig/node-matchengine.git"
+  },
+  "keywords": [
+    "matchengine",
+    "computer",
+    "vision",
+    "cv",
+    "tineye",
+    "api"
+  ],
+  "author": "John Resig <jeresig@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeresig/node-matchengine/issues"
+  },
+  "dependencies": {
+    "request": "~2.33.0"
+  }
+}
