@@ -1,6 +1,6 @@
 {
-  "name": "node-matchengine",
-  "version": "0.0.3",
+  "name": "matchengine",
+  "version": "0.0.4",
   "description": "Node module for using the TinEye MatchEngine API.",
   "main": "matchengine.js",
   "scripts": {
