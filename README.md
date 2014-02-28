@@ -17,6 +17,11 @@ Node module for using the TinEye MatchEngine API.
         });
     });
 
+Installation
+===
+
+    npm install matchengine
+
 API
 ===
 
