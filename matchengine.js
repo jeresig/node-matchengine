@@ -11,9 +11,7 @@ module.exports = function(conf) {
         throw "Please provide a username and password to MatchEngine.";
     }
 
-    if (!conf.server) {
-        throw "Please provide a MatchEngine server to connect to.";
-    }
+    conf.server = conf.server || "matchengine.tineye.com";
 
     var ME = {
         url: "http://" + conf.username + ":" +
@@ -22,9 +20,16 @@ module.exports = function(conf) {
 
         handle: function(callback) {
             return function(err, res, body) {
-                if (!err && res.statusCode === 200 && callback) {
-                    callback(JSON.parse(body));
+                if (!callback) {
+                    return;
                 }
+
+                if (err || res.statusCode !== 200) {
+                    return callback(err);
+                }
+
+                var data = JSON.parse(body);
+                callback(null, data.result || data);
             };
         },
 
@@ -56,6 +61,7 @@ module.exports = function(conf) {
                 files = [files];
             }
 
+            // TODO: Switch this to using the request module instead of curl
             var args = files.map(function(file, i) {
                 return util.format("-F 'images[%s]=@%s' -F 'filepaths[%s]=%s'",
                     i, file, i, (dir ? dir + "/" : "") + path.basename(file));
