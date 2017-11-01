@@ -1,6 +1,6 @@
 {
   "name": "matchengine",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node module for using the TinEye MatchEngine API.",
   "main": "matchengine.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "url": "https://github.com/jeresig/node-matchengine/issues"
   },
   "dependencies": {
-    "request": "~2.33.0"
+    "request": "2.83.0"
   }
 }
