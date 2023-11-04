@@ -39,20 +39,20 @@ module.exports = function(conf) {
         },
 
         list: function(callback) {
-            request(ME.url + "list/?limit=-1", ME.handle(callback));
+            request(ME.url + "list/?limit=0", ME.handle(callback));
         },
 
         similar: function(file, callback) {
             request.post({
                 url: ME.url + "search/",
-                form: { filepath: file, limit: -1 }
+                form: { filepath: file, limit: 0 }
             }, ME.handle(callback) );
         },
 
         urlSimilar: function(url, callback) {
             request.post({
                 url: ME.url + "search/",
-                form: { url: url, limit: -1 }
+                form: { url: url, limit: 0 }
             }, ME.handle(callback) );
         },
 
